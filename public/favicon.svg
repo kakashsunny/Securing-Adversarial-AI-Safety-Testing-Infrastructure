@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="50%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <!-- Background Shield -->
+  <path d="M32 4L54 14V30C54 44.5 44.5 56 32 60C19.5 56 10 44.5 10 30V14L32 4Z" fill="#080b10" stroke="url(#shieldGrad)" stroke-width="3" filter="url(#glow)" />
+  
+  <!-- Central Arbiter Core Hexagon -->
+  <polygon points="32,18 42,24 42,36 32,42 22,36 22,24" fill="#0f172a" stroke="#06b6d4" stroke-width="2" />
+  
+  <!-- Inner Golden Spark Core -->
+  <circle cx="32" cy="30" r="4" fill="#f59e0b" />
+  
+  <!-- Enclave Beacons -->
+  <circle cx="22" cy="20" r="2.5" fill="#ef4444" />
+  <circle cx="42" cy="20" r="2.5" fill="#06b6d4" />
+  <circle cx="32" cy="46" r="2.5" fill="#a855f7" />
+</svg>
