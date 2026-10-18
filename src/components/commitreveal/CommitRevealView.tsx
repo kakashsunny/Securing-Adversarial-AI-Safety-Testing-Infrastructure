@@ -85,26 +85,26 @@ export const CommitRevealView: React.FC = () => {
   ];
 
   return (
-    <div className="h-full w-full overflow-y-auto p-6 space-y-6 bg-[#06090e]">
+    <div className="h-full w-full overflow-y-auto p-3 sm:p-6 pb-24 sm:pb-8 space-y-4 sm:space-y-6 bg-[#06090e] touch-scroll">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 sm:pb-4 border-b border-slate-800">
         <div>
           <div className="flex items-center gap-2">
-            <h1 className="font-display text-xl font-bold text-slate-100">
+            <h1 className="font-display text-lg sm:text-xl font-bold text-slate-100">
               Commit-Reveal Cryptographic Protocol
             </h1>
-            <span className="text-xs font-mono px-2 py-0.5 rounded bg-cyan-950 border border-cyan-500/40 text-cyan-300">
+            <span className="text-[10px] sm:text-xs font-mono px-2 py-0.5 rounded bg-cyan-950 border border-cyan-500/40 text-cyan-300">
               WebCrypto SHA-256
             </span>
           </div>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-xs text-slate-400 mt-1 max-w-2xl">
             Mathematical proof guaranteeing that Blue cannot snoop on attack payloads before rendering a verdict, while preventing Red from retroactively swapping test prompts.
           </p>
         </div>
       </div>
 
       {/* Step-by-Step Architecture Timeline Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
         {STEPS.map((step) => {
           const Icon = step.icon;
           return (

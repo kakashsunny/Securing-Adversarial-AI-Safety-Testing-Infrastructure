@@ -100,34 +100,34 @@ export const DockerPocView: React.FC = () => {
   };
 
   return (
-    <div className="h-full w-full overflow-y-auto p-6 space-y-6 bg-[#06090e]">
+    <div className="h-full w-full overflow-y-auto p-3 sm:p-6 pb-24 sm:pb-8 space-y-4 sm:space-y-6 bg-[#06090e] touch-scroll">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 sm:pb-4 border-b border-slate-800">
         <div>
-          <div className="flex items-center gap-2">
-            <h1 className="font-display text-xl font-bold text-slate-100">
+          <div className="flex items-center gap-2 flex-wrap">
+            <h1 className="font-display text-lg sm:text-xl font-bold text-slate-100">
               Hardened Docker PoC & Compliance Report
             </h1>
-            <span className="text-xs font-mono px-2.5 py-0.5 rounded bg-amber-950 border border-amber-500/40 text-amber-300">
-              Production Hardening Artifacts
+            <span className="text-[10px] sm:text-xs font-mono px-2 py-0.5 rounded bg-amber-950 border border-amber-500/40 text-amber-300">
+              Production Artifacts
             </span>
           </div>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-xs text-slate-400 mt-1 max-w-2xl">
             Production-grade Docker Compose configurations, non-root users, seccomp filters, and verifiable compliance exports.
           </p>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 shrink-0 flex-wrap">
           <button
             onClick={handleExportJSON}
-            className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-medium text-cyan-300 bg-cyan-950/60 border border-cyan-500/40 rounded-xl hover:bg-cyan-900/60 transition-all shadow-md active:scale-95"
+            className="flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 text-xs font-medium text-cyan-300 bg-cyan-950/60 border border-cyan-500/40 rounded-xl hover:bg-cyan-900/60 transition-all shadow-md active:scale-95"
           >
             <Download className="h-3.5 w-3.5" />
-            <span>Export JSON Audit</span>
+            <span>Export JSON</span>
           </button>
           <button
             onClick={handlePrintReport}
-            className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-medium text-slate-300 bg-slate-900 border border-slate-700/80 rounded-xl hover:bg-slate-800 transition-all shadow-md active:scale-95"
+            className="flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 text-xs font-medium text-slate-300 bg-slate-900 border border-slate-700/80 rounded-xl hover:bg-slate-800 transition-all shadow-md active:scale-95"
           >
             <Printer className="h-3.5 w-3.5" />
             <span>Print Report</span>

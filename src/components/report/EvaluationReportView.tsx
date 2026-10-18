@@ -151,32 +151,32 @@ export const EvaluationReportView: React.FC = () => {
   };
 
   return (
-    <div className="h-full w-full overflow-y-auto p-6 space-y-6 bg-[#06090e] print:bg-white print:text-black print:p-2">
+    <div className="h-full w-full overflow-y-auto p-3 sm:p-6 pb-24 sm:pb-8 space-y-4 sm:space-y-6 bg-[#06090e] touch-scroll print:bg-white print:text-black print:p-2">
       {/* Top Action Toolbar (Hidden in Print) */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-800 print:hidden">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 sm:pb-4 border-b border-slate-800 print:hidden">
         <div>
-          <div className="flex items-center gap-2">
-            <h1 className="font-display text-xl font-bold text-slate-100">
-              Evaluation & Audit Compliance Report
+          <div className="flex items-center gap-2 flex-wrap">
+            <h1 className="font-display text-lg sm:text-xl font-bold text-slate-100">
+              Evaluation & Audit Report
             </h1>
-            <span className="text-xs font-mono px-2.5 py-0.5 rounded bg-emerald-950 border border-emerald-500/40 text-emerald-300">
-              ISO / SOC2 Ready Export
+            <span className="text-[10px] sm:text-xs font-mono px-2 py-0.5 rounded bg-emerald-950 border border-emerald-500/40 text-emerald-300">
+              SOC2 Ready
             </span>
           </div>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-xs text-slate-400 mt-1 max-w-2xl">
             Export cryptographic findings, tamper-evident Merkle roots, and executive safety scorecards in JSON format or formatted PDF.
           </p>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 shrink-0 flex-wrap">
           {testResults.length === 0 && (
             <button
               onClick={() => runFullEvaluationSuite()}
               disabled={isRunningSuite}
-              className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-medium text-amber-300 bg-amber-950/60 border border-amber-500/40 rounded-xl hover:bg-amber-900/60 transition-all shadow-md active:scale-95 disabled:opacity-50"
+              className="flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 text-xs font-medium text-amber-300 bg-amber-950/60 border border-amber-500/40 rounded-xl hover:bg-amber-900/60 transition-all shadow-md active:scale-95 disabled:opacity-50"
             >
               <Sparkles className="h-3.5 w-3.5" />
-              <span>{isRunningSuite ? 'Running 20 Rounds...' : 'Populate 20-Round Suite'}</span>
+              <span>{isRunningSuite ? 'Running Suite...' : 'Populate 20 Rounds'}</span>
             </button>
           )}
 

@@ -11,6 +11,8 @@
     font-family: var(--font-sans);
     background-color: #06090e;
     color: #e2e8f0;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
   }
 
   h1, h2, h3, .font-display {
@@ -20,7 +22,16 @@
 
   code, pre, .font-mono {
     font-family: var(--font-mono);
+    word-break: break-word;
   }
+}
+
+.safe-area-bottom {
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+}
+
+.touch-scroll {
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Custom glow utilities */

@@ -75,36 +75,36 @@ export const AuditChainView: React.FC = () => {
   };
 
   return (
-    <div className="h-full w-full overflow-y-auto p-6 space-y-6 bg-[#06090e]">
+    <div className="h-full w-full overflow-y-auto p-3 sm:p-6 pb-24 sm:pb-8 space-y-4 sm:space-y-6 bg-[#06090e] touch-scroll">
       {/* Header & Chain Control Toolbar */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 sm:pb-4 border-b border-slate-800">
         <div>
-          <div className="flex items-center gap-2">
-            <h1 className="font-display text-xl font-bold text-slate-100">
+          <div className="flex items-center gap-2 flex-wrap">
+            <h1 className="font-display text-lg sm:text-xl font-bold text-slate-100">
               Tamper-Evident Audit Chain Ledger
             </h1>
             <span
-              className={`text-xs font-mono px-2.5 py-0.5 rounded ${
+              className={`text-[10px] sm:text-xs font-mono px-2 py-0.5 rounded ${
                 chainVerificationResult.isValid
                   ? 'bg-emerald-950/60 border border-emerald-500/40 text-emerald-300'
                   : 'bg-rose-950/60 border border-rose-500/40 text-rose-300'
               }`}
             >
               {chainVerificationResult.isValid
-                ? 'ALL BLOCKS VERIFIED (SHA-256 / ECDSA)'
-                : `CHAIN BROKEN AT BLOCK #${chainVerificationResult.brokenBlockIndex}`}
+                ? 'ALL BLOCKS VERIFIED'
+                : `BROKEN AT #${chainVerificationResult.brokenBlockIndex}`}
             </span>
           </div>
-          <p className="text-xs text-slate-400 mt-1">
-            Every evaluation finding is cryptographically chained (<code>H_n = SHA-256(H_{'{n-1}'} + EntryData)</code>) and signed with Arbiter ECDSA keys to ensure mathematical non-repudiation.
+          <p className="text-xs text-slate-400 mt-1 max-w-2xl">
+            Every evaluation finding is cryptographically chained (<code>H_n = SHA-256(H_prev + EntryData)</code>) and signed with Arbiter ECDSA keys to ensure mathematical non-repudiation.
           </p>
         </div>
 
-        <div className="flex items-center gap-2.5">
+        <div className="flex items-center gap-2 shrink-0 flex-wrap">
           {tamperedBlockIndex !== null ? (
             <button
               onClick={() => handleRestoreClick(tamperedBlockIndex)}
-              className="flex items-center gap-1.5 px-4 py-2 text-xs font-medium text-emerald-300 bg-emerald-950/60 border border-emerald-500/40 rounded-xl hover:bg-emerald-900/60 transition-all shadow-md active:scale-95"
+              className="flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 text-xs font-medium text-emerald-300 bg-emerald-950/60 border border-emerald-500/40 rounded-xl hover:bg-emerald-900/60 transition-all shadow-md active:scale-95"
             >
               <RotateCcw className="h-3.5 w-3.5" />
               <span>Restore Authentic State</span>
@@ -112,20 +112,20 @@ export const AuditChainView: React.FC = () => {
           ) : (
             <button
               onClick={() => handleTamperClick(1)}
-              className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-medium text-rose-300 bg-rose-950/60 border border-rose-500/40 rounded-xl hover:bg-rose-900/60 transition-all shadow-md active:scale-95"
+              className="flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 text-xs font-medium text-rose-300 bg-rose-950/60 border border-rose-500/40 rounded-xl hover:bg-rose-900/60 transition-all shadow-md active:scale-95"
             >
               <AlertTriangle className="h-3.5 w-3.5" />
-              <span>Simulate Tamper on Block #1</span>
+              <span>Tamper Block #1</span>
             </button>
           )}
 
           <button
             onClick={handleVerifyChain}
             disabled={isVerifying}
-            className="flex items-center gap-1.5 px-4 py-2 text-xs font-medium text-slate-900 bg-cyan-400 hover:bg-cyan-300 rounded-xl transition-all shadow-md shadow-cyan-950/40 font-display active:scale-95"
+            className="flex items-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-2 text-xs font-medium text-slate-900 bg-cyan-400 hover:bg-cyan-300 rounded-xl transition-all shadow-md shadow-cyan-950/40 font-display active:scale-95"
           >
             <ShieldCheck className="h-3.5 w-3.5 fill-slate-900" />
-            <span>{isVerifying ? 'Recomputing Hashes...' : 'Verify Full Chain'}</span>
+            <span>{isVerifying ? 'Verifying...' : 'Verify Chain'}</span>
           </button>
         </div>
       </div>

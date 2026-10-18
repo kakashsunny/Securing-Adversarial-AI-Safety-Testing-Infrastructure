@@ -24,19 +24,19 @@ export const AccessNetworkView: React.FC = () => {
   }, [tickCapabilityTokens]);
 
   return (
-    <div className="h-full w-full overflow-y-auto p-6 space-y-6 bg-[#06090e]">
+    <div className="h-full w-full overflow-y-auto p-3 sm:p-6 pb-24 sm:pb-8 space-y-4 sm:space-y-6 bg-[#06090e] touch-scroll">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 sm:pb-4 border-b border-slate-800">
         <div>
-          <div className="flex items-center gap-2">
-            <h1 className="font-display text-xl font-bold text-slate-100">
+          <div className="flex items-center gap-2 flex-wrap">
+            <h1 className="font-display text-lg sm:text-xl font-bold text-slate-100">
               Access Control & Network Segmentation
             </h1>
-            <span className="text-xs font-mono px-2.5 py-0.5 rounded bg-cyan-950 border border-cyan-500/40 text-cyan-300">
+            <span className="text-[10px] sm:text-xs font-mono px-2 py-0.5 rounded bg-cyan-950 border border-cyan-500/40 text-cyan-300">
               ABAC + Capability Tokens
             </span>
           </div>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-xs text-slate-400 mt-1 max-w-2xl">
             Short-lived Ed25519 capability tokens, role-based boundary constraints, and air-gapped Docker internal network bridges.
           </p>
         </div>

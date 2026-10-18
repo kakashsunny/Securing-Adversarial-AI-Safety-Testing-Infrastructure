@@ -28,25 +28,25 @@ export const DatasetsCatalogView: React.FC = () => {
   });
 
   return (
-    <div className="h-full w-full overflow-y-auto p-6 space-y-6 bg-[#06090e]">
+    <div className="h-full w-full overflow-y-auto p-3 sm:p-6 pb-24 sm:pb-8 space-y-4 sm:space-y-6 bg-[#06090e] touch-scroll">
       {/* Header Banner */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 sm:pb-4 border-b border-slate-800">
         <div>
-          <div className="flex items-center gap-2">
-            <h1 className="font-display text-xl font-bold text-slate-100">
-              Adversarial Datasets & Threat Intelligence Catalog
+          <div className="flex items-center gap-2 flex-wrap">
+            <h1 className="font-display text-lg sm:text-xl font-bold text-slate-100">
+              Adversarial Datasets & Threat Intel
             </h1>
-            <span className="text-xs font-mono px-2.5 py-0.5 rounded bg-cyan-950 border border-cyan-500/40 text-cyan-300">
-              8 Standardized Safety Resources
+            <span className="text-[10px] sm:text-xs font-mono px-2 py-0.5 rounded bg-cyan-950 border border-cyan-500/40 text-cyan-300">
+              8 Resources
             </span>
           </div>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-xs text-slate-400 mt-1 max-w-2xl">
             Standardized benchmarks, red-teaming corpora, vulnerability registries, and system provenance resources integrated into the Bayora Sentinel control plane.
           </p>
         </div>
 
         {/* Search filter */}
-        <div className="relative w-full md:w-72">
+        <div className="relative w-full sm:w-72 shrink-0">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-slate-500" />
           <input
             type="text"
@@ -59,7 +59,7 @@ export const DatasetsCatalogView: React.FC = () => {
       </div>
 
       {/* Dataset Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         {filteredDatasets.map((dataset) => (
           <div
             key={dataset.id}

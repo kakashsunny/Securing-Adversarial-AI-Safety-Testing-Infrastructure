@@ -101,19 +101,19 @@ export const PayloadBuilderView: React.FC = () => {
   };
 
   return (
-    <div className="h-full w-full overflow-y-auto p-6 space-y-6 bg-[#06090e]">
+    <div className="h-full w-full overflow-y-auto p-3 sm:p-6 pb-24 sm:pb-8 space-y-4 sm:space-y-6 bg-[#06090e] touch-scroll">
       {/* Header Banner */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 sm:pb-4 border-b border-slate-800">
         <div>
           <div className="flex items-center gap-2">
-            <h1 className="font-display text-xl font-bold text-slate-100">
+            <h1 className="font-display text-lg sm:text-xl font-bold text-slate-100">
               Custom Adversarial Payload Sandbox
             </h1>
-            <span className="text-xs font-mono px-2 py-0.5 rounded bg-cyan-950 border border-cyan-500/40 text-cyan-300">
-              Interactive WebCrypto Prover
+            <span className="text-[10px] sm:text-xs font-mono px-2 py-0.5 rounded bg-cyan-950 border border-cyan-500/40 text-cyan-300">
+              WebCrypto Prover
             </span>
           </div>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-xs text-slate-400 mt-1 max-w-2xl">
             Craft custom adversarial prompts, calculate live WebCrypto SHA-256 pre-images, test defensive regex matchers, and dispatch directly into the Arbiter evaluation cycle.
           </p>
         </div>
@@ -121,10 +121,10 @@ export const PayloadBuilderView: React.FC = () => {
         <button
           onClick={handleDispatch}
           disabled={isSubmitting || !promptText.trim()}
-          className="flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-display font-bold text-xs rounded-xl shadow-lg shadow-cyan-500/25 transition-all active:scale-95 disabled:opacity-50"
+          className="flex items-center justify-center gap-2 px-4 py-2 sm:py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-display font-bold text-xs rounded-xl shadow-lg shadow-cyan-500/25 transition-all active:scale-95 disabled:opacity-50 shrink-0"
         >
           <Send className="h-3.5 w-3.5 fill-slate-950" />
-          <span>{isSubmitting ? 'Evaluating via Arbiter...' : 'Dispatch to Arbiter Test'}</span>
+          <span>{isSubmitting ? 'Evaluating...' : 'Dispatch to Arbiter'}</span>
         </button>
       </div>
 

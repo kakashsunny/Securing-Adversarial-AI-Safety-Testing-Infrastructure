@@ -190,17 +190,17 @@ export const CommandPalette: React.FC = () => {
   );
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center pt-24 px-4 bg-black/75 backdrop-blur-md animate-in fade-in duration-150">
+    <div className="fixed inset-0 z-50 flex items-start justify-center pt-12 sm:pt-24 px-3 sm:px-4 bg-black/75 backdrop-blur-md animate-in fade-in duration-150">
       <div className="w-full max-w-xl bg-[#090d16] border border-slate-700/80 rounded-2xl shadow-2xl overflow-hidden font-mono">
         {/* Search Input Bar */}
-        <div className="flex items-center gap-3 px-4 py-3.5 border-b border-slate-800 bg-slate-950/60">
+        <div className="flex items-center gap-3 px-3.5 sm:px-4 py-3 sm:py-3.5 border-b border-slate-800 bg-slate-950/60">
           <Search className="h-4 w-4 text-cyan-400 shrink-0" />
           <input
             type="text"
             autoFocus
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Type a command or search action (or press Esc to exit)..."
+            placeholder="Type a command or action (Esc to exit)..."
             className="w-full bg-transparent text-xs text-slate-100 placeholder-slate-500 focus:outline-none"
           />
           <kbd className="px-1.5 py-0.5 text-[10px] text-slate-400 bg-slate-900 border border-slate-700 rounded">
@@ -209,7 +209,7 @@ export const CommandPalette: React.FC = () => {
         </div>
 
         {/* Command Items List */}
-        <div className="max-h-80 overflow-y-auto p-2 space-y-1">
+        <div className="max-h-[60vh] sm:max-h-80 overflow-y-auto p-2 space-y-1 touch-scroll">
           {filtered.map((item) => {
             const Icon = item.icon;
             return (

@@ -48,25 +48,25 @@ export const LeakageMonitorView: React.FC = () => {
       ];
 
   return (
-    <div className="h-full w-full overflow-y-auto p-6 space-y-6 bg-[#06090e]">
+    <div className="h-full w-full overflow-y-auto p-3 sm:p-6 pb-24 sm:pb-8 space-y-4 sm:space-y-6 bg-[#06090e] touch-scroll">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 sm:pb-4 border-b border-slate-800">
         <div>
-          <div className="flex items-center gap-2">
-            <h1 className="font-display text-xl font-bold text-slate-100">
+          <div className="flex items-center gap-2 flex-wrap">
+            <h1 className="font-display text-lg sm:text-xl font-bold text-slate-100">
               Leakage & Side-Channel Monitor
             </h1>
             <span
-              className={`text-xs font-mono px-2 py-0.5 rounded font-bold ${
+              className={`text-[10px] sm:text-xs font-mono px-2 py-0.5 rounded font-bold ${
                 isSecure
                   ? 'bg-emerald-950/80 border border-emerald-500/40 text-emerald-300'
                   : 'bg-rose-950/80 border border-rose-500/40 text-rose-300'
               }`}
             >
-              {isSecure ? 'LEAKAGE RISK: 0.0% (CONTAINED)' : 'LEAKAGE RISK: 88.4% (CRITICAL)'}
+              {isSecure ? 'LEAKAGE: 0.0%' : 'LEAKAGE: 88.4% CRITICAL'}
             </span>
           </div>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-xs text-slate-400 mt-1 max-w-2xl">
             Real-time surveillance of honeytoken canaries, timing side-channels, and metadata-only anomaly feeds with zero payload exposure.
           </p>
         </div>
